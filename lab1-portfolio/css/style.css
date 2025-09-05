@@ -10,8 +10,8 @@
     --tablet-max: 1023px;
     --desktop-min: 1024px;
 
-    --primary-background: #1b1b1b;
-    --primary-text: #e5e5e5;
+    --primary-black: #1b1b1b;
+    --primary-white: #e5e5e5;
 
   --text-xs: 0.75rem;       /* 12px */
   --text-sm: 0.875rem;      /* 14px */
@@ -29,8 +29,8 @@
 }
 
 body {
-    background: var(--primary-background);
-    color: var(--primary-text);
+    background: var(--primary-black);
+    color: var(--primary-white);
     font-family: "Nunito", "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
@@ -105,4 +105,19 @@ main {
 
 .has-tooltip {
     width: 24px;
+}
+
+.about_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--primary-white);
+    color: var(--primary-black);
+    font-size: var(--text-xl);
+    padding: 50px 100px;
+
+}
+
+.about_info div{
+    font-weight: bold;
 }
