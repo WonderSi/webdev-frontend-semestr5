@@ -175,7 +175,6 @@ animation-play-state: paused !important;
     background-color: var(--primary-black);
     padding: 20px 30px;
     min-width: fit-content;
-border
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
