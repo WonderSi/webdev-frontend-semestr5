@@ -173,10 +173,9 @@ animation-play-state: paused !important;
     justify-content: center;
     gap: 30px;
     background-color: var(--primary-black);
-    border-radius: 30px;
     padding: 20px 30px;
     min-width: fit-content;
-
+border
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -191,7 +190,6 @@ animation-play-state: paused !important;
     width: 48px;
     height: 48px;
     background-color: var(--primary-white);
-    border-radius: 20px;
 }
 
 .card_info {  
@@ -240,8 +238,6 @@ animation-play-state: paused !important;
     justify-content: center;
     width: 100%;
     background-color: var(--primary-black);
-    border-radius: 50px;
-    overflow: hidden;
 }
 
 .portfolio_info_card img {
