@@ -125,3 +125,90 @@ main {
 .about_info div{
     font-weight: bold;
 }
+
+
+.skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.skills_main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    padding: 50px;
+}
+
+.skills_info {
+    display: flex;
+    gap: 40px;
+    background-color: var(--primary-white);
+    padding: 20px 40px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+}   
+
+.cards_container {
+    display: flex;
+    gap: 40px;
+    animation: slide-back-forth 8s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+.cards_container:hover {
+animation-play-state: paused !important; 
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: var(--primary-black);
+    border-radius: 30px;
+    padding: 20px 30px;
+    min-width: fit-content;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.card_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary-white);
+    border-radius: 20px;
+}
+
+.card_info {  
+    color: var(--primary-white);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.card_info > div:first-child {
+    font-weight: 900;
+}
+
+@keyframes slide-back-forth {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% + 100vw - 100px));
+    }
+}
