@@ -53,7 +53,7 @@ header {
     top: 0;
     width: 100%;
     backdrop-filter: blur(1px);
-        background-color: var(--primary-black);
+    background-color: var(--primary-black);
     opacity: 0.8;
     z-index: 100;
 }
@@ -95,6 +95,15 @@ main {
     user-select: none
 }
 
+.portfolio_main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    padding: 50px;
+}
+
 .about_main .name {
     font-size: var(--text-6xl);
 }
@@ -130,15 +139,6 @@ main {
 
 .about_info div{
     font-weight: bold;
-}
-
-
-.skills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
 }
 
 .skills_main {
@@ -233,7 +233,7 @@ animation-play-state: paused !important;
     justify-content: center;
     gap: 40px;
     background-color: var(--primary-white);
-    padding: 20px 40px;
+    padding: 20px 140px;
 }
 
 .portfolio_info_card {
@@ -249,21 +249,23 @@ animation-play-state: paused !important;
     width: 100%;
 }
 
-.portfolio_info_card div {
+.portfolio_info_card .text {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-self: center;
-    padding: 15px 25px;
+    padding: 50px 25px;
+    gap: 40px;
 }
 
-.portfolio_info_card div:first-child {
+.portfolio_info_card .info_name {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: var(--text-5xl);
     font-weight: 900;
+    text-align: center;
 }
 
-.portfolio_info_card div:last-child {
+.portfolio_info_card .info_discription {
     font-size: var(--text-xl);
     text-align: center;
 }
@@ -272,33 +274,39 @@ animation-play-state: paused !important;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
     width: 100%;
     background-color: var(--primary-black);
+    overflow: hidden;
 }
 
 .portfolio_info_card_inline img {
-    width: 100%;
+    width: 90%; /* Уменьшаем до 60% от ширины контейнера */
+    max-width: 400px; /* Максимальная ширина */
+    object-fit: cover;
 }
 
-.portfolio_info_card_inline div {
+.portfolio_info_card_inline .text {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-self: center;
     padding: 15px 25px;
+    gap: 40px;
 }
 
-.portfolio_info_card_inline div:first-child {
+.portfolio_info_card_inline .info_name {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: var(--text-5xl);
     font-weight: 900;
+    text-align: center;
 }
 
-.portfolio_info_card_inline div:last-child {
+.portfolio_info_card_inline .info_discription {
     font-size: var(--text-xl);
     text-align: center;
 }
+
 
 
 .contacts_main {
@@ -307,25 +315,26 @@ animation-play-state: paused !important;
     justify-content: center;
     font-size: var(--text-xl);
     font-weight: 700;
-    padding: 50px;
+    padding: 25px 16px;
 }
 
 .contacts_info {
     display: flex;
     align-items: start;
     justify-content: space-between;
-    flex-wrap: wrap;
+    padding: 0px 140px;
 }
 
 .contacts_info_card {
     display: flex;
     flex-direction: column;
     align-items: start;
+    margin-bottom: 30px;
 }
 
 .contacts_info_card p:first-child {
     font-size: var(--text-2xl);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .contacts_info_card_a {
@@ -370,16 +379,120 @@ footer div:last-child:hover {
     body {
         background-color: blue;
     }   
+
+    .nav_brand {
+        display: none;
+    }    
+
+    .nav {
+        flex-direction: column;
+        font-size: var(--text-xs);
+        padding: 5px 16px;
+    } 
+
+
+
+    .about_main {
+        padding: 32px 16px;
+    }
+    .about_info {
+        font-size: var(--text-xs);
+        padding: 25px 16px;
+    }
+
+    .skills_main{
+        padding: 25px 16px;
+    }
+
+    .portfolio_main {
+        padding: 25px 16px;
+    }
+    .portfolio_info {
+        padding: 25px 16px;
+    }
+    .portfolio_info_card .text {
+        padding: 25px 25px;
+        gap: 20px;
+    }
+    .portfolio_info_card .info_name {
+        font-size: var(--text-lg);
+    }
+    .portfolio_info_card .info_discription {
+        font-size: var(--text-sm);
+    }
+    .portfolio_info_card_inline {
+        flex-direction: column;
+    }
+    .portfolio_info_card_inline img {
+        width: 100%;
+        max-width: 100%;
+    }
+    .portfolio_info_card_inline .text {
+        padding: 15px 25px;
+        gap: 20px
+    }
+    .portfolio_info_card_inline .info_name {
+        font-size: var(--text-lg);
+    }
+    .portfolio_info_card_inline .info_discription {
+        font-size: var(--text-sm);
+    }
+
+    .contacts_main {
+        padding: 25px 16px;
+    }
+    .contacts_info {
+        justify-content: center;
+        flex-direction: column;
+        padding: 0px 25px;
+    }
+
+    
 }
 
-@media screen and (min-width: 767px) and (max-width: 1023px) {
-    body {
-        background-color: red;
-    }   
+@media screen and (min-width: 767px) and (max-width: 1023px) {  
+    .nav {
+        flex-direction: column;
+        gap: 20px;
+        font-size: var(--text-sm);
+    } 
+
+
+    .about_info {
+        padding: 25px 75px;
+    }
+
+    .skills_main{
+        padding: 40px 75px;
+    }
+
+    .portfolio_main {
+        padding: 40px 75px;
+    }
+    .portfolio_info {
+        padding: 25px 75px;
+    }
+    .portfolio_info_card .text {
+        padding: 25px 25px;
+        gap: 20px;
+    }
+    .portfolio_info_card_inline {
+        flex-direction: column;
+    }
+    .portfolio_info_card_inline img {
+        width: 100%;
+        max-width: 100%;
+    }
+    .portfolio_info_card_inline .text {
+        padding: 15px 25px;
+        gap: 20px
+    }
+
+    .contacts_main {
+        padding: 40px 75px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
-    body {
-        background-color: black;
-    }   
+ 
 }
