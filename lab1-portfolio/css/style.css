@@ -13,19 +13,19 @@
     --primary-black: #1b1b1b;
     --primary-white: #e5e5e5;
 
-  --text-xs: 0.75rem;       /* 12px */
-  --text-sm: 0.875rem;      /* 14px */
-  --text-base: 1rem;        /* 16px */
-  --text-lg: 1.125rem;      /* 18px */
-  --text-xl: 1.25rem;       /* 20px */
-  --text-2xl: 1.5rem;       /* 24px */
-  --text-3xl: 1.875rem;     /* 30px */
-  --text-4xl: 2.25rem;      /* 36px */
-  --text-5xl: 3rem;         /* 48px */
-  --text-6xl: 3.75rem;      /* 60px */
-  --text-7xl: 4.5rem;       /* 72px */
-  --text-8xl: 6rem;         /* 96px */
-  --text-9xl: 8rem;         /* 128px */
+    --text-xs: 0.75rem;       /* 12px */
+    --text-sm: 0.875rem;      /* 14px */
+    --text-base: 1rem;        /* 16px */
+    --text-lg: 1.125rem;      /* 18px */
+    --text-xl: 1.25rem;       /* 20px */
+    --text-2xl: 1.5rem;       /* 24px */
+    --text-3xl: 1.875rem;     /* 30px */
+    --text-4xl: 2.25rem;      /* 36px */
+    --text-5xl: 3rem;         /* 48px */
+    --text-6xl: 3.75rem;      /* 60px */
+    --text-7xl: 4.5rem;       /* 72px */
+    --text-8xl: 6rem;         /* 96px */
+    --text-9xl: 8rem;         /* 128px */
 }
 
 body {
@@ -60,6 +60,12 @@ header {
 
 main {
     z-index: 0;
+}
+.container {
+    width: 100%;
+    max-width: 1280px;
+    padding: 24px;
+    margin: auto;
 }
 
 .nav {
@@ -197,7 +203,7 @@ animation-play-state: paused !important;
     flex-shrink: 0;
 }
 
-.card_info > div:first-child {
+.card_info div:first-child {
     font-weight: 900;
 }
 
@@ -292,4 +298,52 @@ animation-play-state: paused !important;
 .portfolio_info_card_inline div:last-child {
     font-size: var(--text-xl);
     text-align: center;
+}
+
+
+.contacts_main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    padding: 50px;
+}
+
+.contacts_info {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contacts_info_card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.contacts_info_card p:first-child {
+    font-size: var(--text-2xl);
+    margin-bottom: 20px;
+}
+
+.contacts_info_card_a {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contacts_info_card_a_section a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.contacts_info_card_a_section a:hover {
+    transform: scale(1.05);
 }
