@@ -262,3 +262,34 @@ animation-play-state: paused !important;
     text-align: center;
 }
 
+.portfolio_info_card_inline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    background-color: var(--primary-black);
+}
+
+.portfolio_info_card_inline img {
+    width: 100%;
+}
+
+.portfolio_info_card_inline div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    padding: 15px 25px;
+}
+
+.portfolio_info_card_inline div:first-child {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: var(--text-5xl);
+    font-weight: 900;
+}
+
+.portfolio_info_card_inline div:last-child {
+    font-size: var(--text-xl);
+    text-align: center;
+}
