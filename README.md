@@ -14,7 +14,7 @@
 
 ## 🛠️ Технологии
 
-- **Frontend**: HTML5, CSS3, JavaScript ES6+
+- **Frontend**: HTML5, CSS3, JavaScript
 - **Архитектура**:
 ```
 lab1-portfolio/
