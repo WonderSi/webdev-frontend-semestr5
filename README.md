@@ -4,7 +4,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-Styling-blue?style=for-the-badge&logo=css3)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge&logo=javascript)
 
-## 📸 Скриншот
+## 📸 Скриншоты
 
 ![Главный экран](./lab1-portfolio/github/screenshot1.png)
 
@@ -39,6 +39,4 @@ git clone https://github.com/WonderSi/webdev-frontend-semestr5.git
 git checkout lab1-portfolio
 ```
 3. Откройте файл `index.html` в браузере:
-```
-http://localhost:5500
-```
+
