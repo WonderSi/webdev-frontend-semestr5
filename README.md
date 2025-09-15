@@ -6,11 +6,11 @@
 
 ## 📸 Скриншоты
 
-![Главный экран](./lab1-portfolio/github/screenshot1.png)
+![Главный экран](./github/screenshot1.png)
 
-![Скилы](./lab1-portfolio/github/screenshot2.png)
+![Скилы](./github/screenshot2.png)
 
-![Часть портфолио](./lab1-portfolio/github/screenshot3.png)
+![Часть портфолио](./github/screenshot3.png)
 
 ## 🛠️ Технологии
 
@@ -39,4 +39,5 @@ git clone https://github.com/WonderSi/webdev-frontend-semestr5.git
 git checkout lab1-portfolio
 ```
 3. Откройте файл `index.html` в браузере:
+
 
