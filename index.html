@@ -298,13 +298,63 @@
                 <div class="contacts_info_card">
                     <p>Локация и время работы</p>
                     <div>
-                        <div>Россия</div>
-                        <div>UTC+7 (GMT+7)</d>
-                        <div>8:00 AM - 5:00 PM</div>
+                        Россия - UTC+7 (GMT+7)<br/>
+                        8:00 AM - 5:00 PM
                     </div>
+                    <button class="open-modal-btn" data-modal="feedbackModal">Обратная связь</button>
                 </div>
             </div>
         </section>
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Форма обратной связи</h2>
+                    <button class="close-modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 329.269 329" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#ffffff" opacity="1" ></path></g></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" id="feedbackForm">
+                        <div class="form-group">
+                            <label for="name">Имя *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="messgae">Сообщение *</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel">Отмена</button>
+                            <button type="submit" class="btn-submit">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="successModal" class="modal-small">
+            <div class="toast-content">
+                <div class="toast-body">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 511.985 511.985" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M500.088 83.681c-15.841-15.862-41.564-15.852-57.426 0L184.205 342.148 69.332 227.276c-15.862-15.862-41.574-15.862-57.436 0-15.862 15.862-15.862 41.574 0 57.436l143.585 143.585c7.926 7.926 18.319 11.899 28.713 11.899 10.394 0 20.797-3.963 28.723-11.899l287.171-287.181c15.862-15.851 15.862-41.574 0-57.435z" fill="#1b1b1b" opacity="1" data-original="#000000"></path></g></svg>
+                    <p>Сообщение отправлено!</p>
+                </div>
+            </div>
+        </div>
+        <div id="errorModal" class="modal-small">
+            <div class="toast-content">
+                <div class="toast-body">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 329.269 329" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#1b1b1b" opacity="1" ></path></g></svg>
+                    <p>Ошибка при отправке!</p>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <div>© 2025-2025 WonderSi</div>
