@@ -165,3 +165,11 @@ $(document).ready(function() {
 
     })
 });
+
+$(document).ready(function(){
+    $("#up").click(function(){
+        var curPos=$(document).scrollTop();
+        var scrollTime=curPos/1.73;
+        $("body,html").animate({"scrollTop":0},scrollTime);
+    });
+});
