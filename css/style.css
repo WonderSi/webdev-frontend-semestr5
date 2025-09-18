@@ -39,9 +39,11 @@ body {
 }
 
 a {
-    color: inherit;
+    color: var(--primary-white);
     text-decoration: none;
 }
+
+
 
 #tsparticles {
     position: fixed;
@@ -53,7 +55,7 @@ a {
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     backdrop-filter: blur(1px);
@@ -97,6 +99,10 @@ button:active {
     justify-content: space-between;
     padding: 10px 20px;
     user-select: none;
+}
+
+.nav_menu a.active {
+    font-weight: 1000;
 }
 
 .nav_brand {
