@@ -227,6 +227,11 @@ $(document).ready(function () {
 });
 
 $(document).ready(function() {
+    let currentSlide = 0;
+    let totalSlides = 0;
+    let autoSlideInterval;
+    let inactivityTimer;
+
     function loadPortfolioData() {
         return $.getJSON('./data/portfolio.json')
             .fail(function() {
@@ -234,57 +239,139 @@ $(document).ready(function() {
             });
     }
 
-    function createPortfolioCard(project) {
-        let cardHTML = '';
-
-        if (project.type === 'horizontal') {
-            cardHTML = `
-                <div class="portfolio_info_card_inline" data-project-id="${project.id}">
-                    <img src="${project.image}" alt="${project.title}">
-                    <div class="text">
-                        <div class="info_name">
-                            <p>${project.title}</p>
-                        </div>
-                        <div class="info_discription">
-                            <p>${project.description}</p>
-                        </div>
-                    </div>
+    function createCarouselSlide(project) {
+        const slideHTML = `
+            <div class="carousel_slide type-${project.type}" data-project-id="${project.id}">
+                <img src="${project.image}" alt="${project.title}">
+                ${project.additionalImage ? `<img src="${project.additionalImage}" alt="${project.title}">` : ''}
+                <div class="slide_content">
+                    <h3 class="slide_title">${project.title}</h3>
+                    <p class="slide_description">${project.description}</p>
                 </div>
-            `;
-        } else {
-            cardHTML = `
-                <div class="portfolio_info_card" data-project-id="${project.id}">
-                    <img src="${project.image}" alt="${project.title}">
-                    ${project.additionalImage ? `<img src="${project.additionalImage}" alt="${project.title}">` : ''}
-                    <div class="text">
-                        <div class="info_name">
-                            <p>${project.title}</p>
-                        </div>
-                        <div class="info_discription">
-                            <p>${project.description}</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        return cardHTML;
+            </div>
+        `;
+        return slideHTML;
     }
 
-    function renderPortfolio(projects) {
-        const portfolioContainer = $('.portfolio_info');
-        portfolioContainer.empty();
+    function createCarouselDots(count) {
+        let dotsHTML = '';
+        for (let i = 0; i < count; i++) {
+            dotsHTML += `<span class="carousel_dot ${i === 0 ? 'active' : ''}" data-slide="${i}"></span>`;
+        }
+        return dotsHTML;
+    }
+
+    function goToSlide(slideIndex) {
+        if (slideIndex < 0) slideIndex = totalSlides - 1;
+        if (slideIndex >= totalSlides) slideIndex = 0;
+
+        currentSlide = slideIndex;
+        const translateX = -currentSlide * 100;
+        $('.carousel_slides').css('transform', `translateX(${translateX}%)`);
+
+        $('.carousel_dot').removeClass('active');
+        $(`.carousel_dot[data-slide="${currentSlide}"]`).addClass('active');
+    }
+
+    function nextSlide() {
+        goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(currentSlide - 1);
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 4000);
+    }
+
+    function stopAutoSlide() {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+        }
+    }
+
+    function startInactivityTimer() {
+        clearTimeout(inactivityTimer);
+        inactivityTimer = setTimeout(function() {
+            startAutoSlide();
+        }, 10000);
+    }
+
+    function stopInactivityTimer() {
+        clearTimeout(inactivityTimer);
+    }
+
+    function resetCarousel() {
+        stopAutoSlide();
+        stopInactivityTimer();
+        startInactivityTimer();
+    }
+
+    function renderCarousel(projects) {
+        const slidesContainer = $('#carouselSlides');
+        const dotsContainer = $('#carouselDots');
+
+        slidesContainer.empty();
+        dotsContainer.empty();
+
+        totalSlides = projects.length;
 
         projects.forEach(function(project) {
-            const cardHTML = createPortfolioCard(project);
-            portfolioContainer.append(cardHTML);
+            const slideHTML = createCarouselSlide(project);
+            slidesContainer.append(slideHTML);
         });
+
+        const dotsHTML = createCarouselDots(totalSlides);
+        dotsContainer.html(dotsHTML);
+
+        currentSlide = 0;
+        goToSlide(0);
+
+        startAutoSlide();
+
+        console.log(`Создана карусель с ${totalSlides} слайдами`);
     }
+
+    $('#carouselNext').on('click', function() {
+        nextSlide();
+        resetCarousel();
+    });
+
+    $('#carouselPrev').on('click', function() {
+        prevSlide();
+        resetCarousel();
+    });
+
+    $(document).on('click', '.carousel_dot', function() {
+        const slideIndex = parseInt($(this).data('slide'));
+        goToSlide(slideIndex);
+        resetCarousel();
+    });
+
+    $(document).on('mouseenter', '.carousel_slide', function() {
+        stopAutoSlide();
+        stopInactivityTimer();
+    });
+
+    $(document).on('mouseleave', '.carousel_slide', function() {
+        startInactivityTimer();
+    });
+
+    $('.carousel_btn, .carousel_dot').hover(
+        function() {
+            stopAutoSlide();
+            stopInactivityTimer();
+        },
+        function() {
+            startInactivityTimer();
+        }
+    );
 
     loadPortfolioData()
         .done(function(data) {
             if (data && data.projects) {
-                renderPortfolio(data.projects);
+                renderCarousel(data.projects);
             }
         })
         .fail(function() {
