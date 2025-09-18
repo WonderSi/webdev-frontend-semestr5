@@ -225,3 +225,69 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function() {
+    function loadPortfolioData() {
+        return $.getJSON('./data/portfolio.json')
+            .fail(function() {
+                console.error('Ошибка загрузки данных портфолио');
+            });
+    }
+
+    function createPortfolioCard(project) {
+        let cardHTML = '';
+
+        if (project.type === 'horizontal') {
+            cardHTML = `
+                <div class="portfolio_info_card_inline" data-project-id="${project.id}">
+                    <img src="${project.image}" alt="${project.title}">
+                    <div class="text">
+                        <div class="info_name">
+                            <p>${project.title}</p>
+                        </div>
+                        <div class="info_discription">
+                            <p>${project.description}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            cardHTML = `
+                <div class="portfolio_info_card" data-project-id="${project.id}">
+                    <img src="${project.image}" alt="${project.title}">
+                    ${project.additionalImage ? `<img src="${project.additionalImage}" alt="${project.title}">` : ''}
+                    <div class="text">
+                        <div class="info_name">
+                            <p>${project.title}</p>
+                        </div>
+                        <div class="info_discription">
+                            <p>${project.description}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        return cardHTML;
+    }
+
+    function renderPortfolio(projects) {
+        const portfolioContainer = $('.portfolio_info');
+        portfolioContainer.empty();
+
+        projects.forEach(function(project) {
+            const cardHTML = createPortfolioCard(project);
+            portfolioContainer.append(cardHTML);
+        });
+    }
+
+    loadPortfolioData()
+        .done(function(data) {
+            if (data && data.projects) {
+                renderPortfolio(data.projects);
+            }
+        })
+        .fail(function() {
+            console.error('Не удалось загрузить данные портфолио');
+        });
+});
