@@ -22,7 +22,7 @@ $(document).ready(function() {
 
         setTimeout(function() {
             $('#feedbackForm')[0].reset();
-            $('#feedbackForm .form-group').removeClass('error');
+            $('#feedbackForm .form_group').removeClass('error');
         }, 300)
     }
 
@@ -49,16 +49,16 @@ $(document).ready(function() {
         return isValid
     }
 
-    $('.open-modal-btn').on('click', function() {
+    $('.open_modal_btn').on('click', function() {
         const modalId = $(this).data('modal');
         $(`#${modalId}`).addClass('show');
     })
 
-    $('.close-modal').on('click', function() {
+    $('.close_modal').on('click', function() {
         closeModal();
     });
 
-    $('.btn-cancel').on('click', function() {
+    $('.btn_cancel').on('click', function() {
         closeModal();
     });
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
             return
         }
 
-        const submitBtn = $('.btn-submit');
+        const submitBtn = $('.btn_submit');
         const originalText = submitBtn.text();
         submitBtn.prop('disabled', true).text('Отправка...');
 
@@ -108,13 +108,13 @@ $(document).ready(function() {
 
                 setTimeout(function() {
                     $('#successModal').addClass('show');
-                    $('#successModal .toast-content').css({
+                    $('#successModal .toast_content').css({
                         'transform': 'translateY(0)',
                         'opacity': '1'
                         });
 
                     setTimeout(function() {
-                        $('#successModal .toast-content').css({
+                        $('#successModal .toast_content').css({
                             'transform': 'translateY(-30px)',
                             'opacity': '0'
                             });
@@ -128,13 +128,13 @@ $(document).ready(function() {
 
                 setTimeout(function() {
                     $('#errorModal').addClass('show');
-                    $('#errorModal .toast-content').css({
+                    $('#errorModal .toast_content').css({
                         'transform': 'translateY(0)',
                         'opacity': '1'
                         });
 
                     setTimeout(function() {
-                        $('#errorModal .toast-content').css({
+                        $('#errorModal .toast_content').css({
                             'transform': 'translateY(-30px)',
                             'opacity': '0'
                             });
