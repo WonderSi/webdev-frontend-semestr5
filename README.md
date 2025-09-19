@@ -41,25 +41,31 @@ lab2-portfolio-jquery/        <-- репозиторий
 ```
 <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-links@2.12.0/tsparticles.preset.links.bundle.min.js" integrity="sha256-Kq9IblhtnUOu75DRD4BIgJ4p4/7JUMMy6eXI/YcTo0c=" crossorigin="anonymous" async="" defer="" onload="setupParticlesBackground()"></script>
 ```
+---
 ✔️ **Реализована форма обратной связи с симуляцией отправки данных** <br/>
 ✔️ **Реализовано модальное окно** <br/>
 ✔️ **Валидация форм и полей ввода** <br/>
 ![](./github/screenshot5.png)
 
+---
 ✔️ **Реализовано выпадающее меню** <br/>
 ![](./github/screenshot6.png)
 
+---
 ✔️ **Карусель навыков или изображений работает с кнопками и автопрокруткой** <br/> 
 ✔️ **Галерея портфолио загружается из JSON** <br/>
 ![](./github/screenshot7.png)
 
+---
 ✔️ **Подсветка активного пункта меню при скролле** <br/>
 ✔️ **Кнопка «Вверх» с плавным скроллом** <br/>
 ![](./github/screenshot8.png) <br/>
 За ф-цию кнопки "Вверх" отвечает лого "WonderSi", а при скорлле страницы пункты меню имеют жирный стиль
 
+---
 ✔️ **Корректная структура проекта (папки js/, data/, css/)**
 
+---
 ✔️ **Применена хотя бы одна анимация** <br/>
 Скрол страницы, карусель навыков и портфолио...
 
@@ -74,6 +80,7 @@ git clone https://github.com/WonderSi/webdev-frontend-semestr5.git
 git checkout lab2-portfolio-jquery
 ```
 3. Откройте файл `index.html` в браузере:
+
 
 
 
