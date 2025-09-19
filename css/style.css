@@ -114,7 +114,7 @@ button:active {
     transform: scale(1.05);
 }
 
-.burger-menu {
+.burger_menu {
     display: none;
     background: none;
     border: none;
@@ -125,7 +125,7 @@ button:active {
     z-index: 101;
 }
 
-.burger-menu span {
+.burger_menu span {
     width: 25px;
     height: 3px;
     background-color: var(--primary-white);
@@ -133,15 +133,15 @@ button:active {
     border-radius: 2px;
 }
 
-.burger-menu.active span:nth-child(1) {
+.burger_menu.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
 
-.burger-menu.active span:nth-child(2) {
+.burger_menu.active span:nth-child(2) {
     opacity: 0;
 }
 
-.burger-menu.active span:nth-child(3) {
+.burger_menu.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
@@ -192,7 +192,7 @@ button:active {
     gap: 10px;
 }
 
-.has-tooltip {
+.has_tooltip {
     width: 24px;
 }
 
@@ -475,7 +475,7 @@ footer div:last-child:hover {
     color: var(--primary-white);
 }
 
-.carousel_slide.type-vertical {
+.carousel_slide.type_vertical {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -485,7 +485,7 @@ footer div:last-child:hover {
     object-fit: cover;
 }
 
-.carousel_slide.type-vertical img {
+.carousel_slide.type_vertical img {
     width: 100%;
     height: 100%;
 }
@@ -499,7 +499,7 @@ footer div:last-child:hover {
     justify-content: center;
 }
 
-.carousel_slide.type-vertical .slide_content {
+.carousel_slide.type_vertical .slide_content {
     text-align: center;
     padding: 30px 40px;
 }
@@ -523,7 +523,7 @@ footer div:last-child:hover {
     flex-wrap: wrap;
 }
 
-.carousel_slide.type-vertical .slide_links {
+.carousel_slide.type_vertical .slide_links {
     justify-content: center;
 }
 
@@ -605,7 +605,7 @@ footer div:last-child:hover {
     align-items: center;
 }
 
-.modal-content {
+.modal_content {
     background-color: var(--primary-black);
     width: 90%;
     max-width: 500px;
@@ -613,7 +613,7 @@ footer div:last-child:hover {
     overflow-y: auto;
 }
 
-.modal-header {
+.modal_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -621,13 +621,13 @@ footer div:last-child:hover {
     border-bottom: 1px solid var(--primary-white);
 }
 
-.modal-header h2 {
+.modal_header h2 {
     margin: 0;
     color: var(--primary-white);
     font-size: 1.5rem;
 }
 
-.close-modal {
+.close_modal {
     background: none;
     font-size: 2rem;
     cursor: pointer;
@@ -639,23 +639,23 @@ footer div:last-child:hover {
     align-items: center;
 }
 
-.modal-body {
+.modal_body {
     padding: 20px 30px;
 }
 
-.form-group {
+.form_group {
     margin-bottom: 20px;
 }
 
-.form-group label {
+.form_group label {
     display: block;
     margin-bottom: 8px;
     color: var(--primary-white);
     font-weight: 500;
 }
 
-.form-group input,
-.form-group textarea {
+.form_group input,
+.form_group textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--primary-border);
@@ -665,25 +665,25 @@ footer div:last-child:hover {
     box-sizing: border-box;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.form_group input:focus,
+.form_group textarea:focus {
     outline: none;
     border-color: var(--primary-focus);
 }
 
-.form-group textarea {
+.form_group textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-.form-actions {
+.form_actions {
     display: flex;
     gap: 10px;
     justify-content: space-between;
     margin-top: 30px;
 }
 
-.modal-small {
+.modal_small {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -693,13 +693,13 @@ footer div:last-child:hover {
     height: 100%;
 }
 
-.modal-small.show {
+.modal_small.show {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.toast-content {
+.toast_content {
     display: flex;
     align-items: center;
     background: var(--primary-white);
@@ -711,19 +711,19 @@ footer div:last-child:hover {
     gap: 10px;
 }
 
-.toast-body {
+.toast_body {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.toast-body svg {
+.toast_body svg {
     width: 24px;
     height: 24px;
 }
 
 @media screen and (max-width: 767px) {
-    .burger-menu {
+    .burger_menu {
         display: flex;
     }
 
@@ -821,7 +821,7 @@ footer div:last-child:hover {
         padding: 0px 25px;
     }
 
-    .form-actions {
+    .form_actions {
         flex-direction: column;
     }
 

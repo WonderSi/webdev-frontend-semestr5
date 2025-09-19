@@ -50,37 +50,31 @@ $(document).ready(function() {
     }
 
     $('.open-modal-btn').on('click', function() {
-        console.log('Open modal')
         const modalId = $(this).data('modal');
         $(`#${modalId}`).addClass('show');
     })
 
     $('.close-modal').on('click', function() {
-        console.log('Close modal x')
         closeModal();
     });
 
     $('.btn-cancel').on('click', function() {
-        console.log('Close modal cancel')
         closeModal();
     });
 
     $('.modal').on('click', function(e) {
         if (e.target === this) {
-            console.log('Close modal miss window')
             closeModal()
         }
     });
 
     $(document).on('keydown', function(e) {
         if (e.key === "Escape") {
-            console.log('Close modal esc')
             closeModal();
         }
     });
 
     $('#feedbackForm').on('submit', function(e) {
-        console.log('FeedbackForm submit')
         e.preventDefault();
 
         const formData = {
@@ -91,7 +85,7 @@ $(document).ready(function() {
         }
 
         if(!validateForm(formData)) {
-            console.log('Fail valid form')
+
             return
         }
 
@@ -107,7 +101,6 @@ $(document).ready(function() {
             dataType: 'json',
             timeout: 5000,
             success: function(response) {
-                console.log('Form success')
 
                 setTimeout(function() {
                     $('#feedbackModal').removeClass('show');
@@ -132,7 +125,6 @@ $(document).ready(function() {
                 }, 350)
                 },
             error: function(xhr, status, error) {
-                console.log('Form error')
 
                 setTimeout(function() {
                     $('#errorModal').addClass('show');
@@ -153,7 +145,6 @@ $(document).ready(function() {
                 }, 350)
                 },
             complete: function() {
-                console.log('Ajax complete');
                 submitBtn.prop('disabled', false).text(originalText);
             }
         })
@@ -241,7 +232,7 @@ $(document).ready(function() {
 
     function createCarouselSlide(project) {
         const slideHTML = `
-            <div class="carousel_slide type-${project.type}" data-project-id="${project.id}">
+            <div class="carousel_slide type_${project.type}" data-project-id="${project.id}">
                 <img src="${project.image}" alt="${project.title}">
                 ${project.additionalImage ? `<img src="${project.additionalImage}" alt="${project.title}">` : ''}
                 <div class="slide_content">
@@ -329,8 +320,6 @@ $(document).ready(function() {
         goToSlide(0);
 
         startAutoSlide();
-
-        console.log(`Создана карусель с ${totalSlides} слайдами`);
     }
 
     $('#carouselNext').on('click', function() {
