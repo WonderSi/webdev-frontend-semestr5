@@ -1,0 +1,65 @@
+.about {
+    min-height: 100vh;
+}
+
+.about_main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    user-select: none;
+}
+
+.about_main .name {
+    font-size: var(--text-6xl);
+}
+
+.about_main .status {
+    font-size: var(--text-xl);
+}
+
+.photo_user {
+    width: 100px;
+    border-radius: 100%;
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+}
+
+.has_tooltip {
+    width: 24px;
+}
+
+.about_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--primary-white);
+    color: var(--primary-black);
+    font-size: var(--text-xl);
+    padding: 50px 100px;
+}
+
+.about_info div {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+    .about_main {
+        padding: 32px 16px;
+    }
+    .about_info {
+        font-size: var(--text-xs);
+        padding: 25px 16px;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+    .about_info {
+        padding: 25px 75px;
+    }
+}
