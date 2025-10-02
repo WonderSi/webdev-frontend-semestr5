@@ -41,4 +41,141 @@ a {
   text-decoration: none;
 }
 
+.container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 24px;
+  margin: auto;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.3137254902);
+  padding: 24px;
+  font-size: var(--text-lg);
+}
+
+footer div:last-child {
+  transition: all 0.3s ease;
+}
+
+footer div:last-child:hover {
+  transform: scale(1.05);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(1px);
+  background-color: var(--primary-black);
+  opacity: 0.8;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  user-select: none;
+}
+
+.nav_menu {
+  display: flex;
+  gap: 40px;
+  transition: all 0.3s ease;
+}
+
+.nav_menu a.active {
+  font-weight: 1000;
+}
+
+.nav_brand {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav_brand:hover {
+  transform: scale(1.05);
+}
+
+.burger_menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  z-index: 101;
+}
+
+.burger_menu span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-white);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.burger_menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger_menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger_menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media screen and (max-width: 767px) {
+  .burger_menu {
+    display: flex;
+  }
+  .nav_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-black);
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+  }
+  .nav_menu.active {
+    transform: translateY(-20%);
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav_menu a {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(229, 229, 229, 0.1);
+    text-align: center;
+    font-size: var(--text-base);
+  }
+  .nav_menu a:last-child {
+    border-bottom: none;
+  }
+}
+main {
+  z-index: 0;
+}
+
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 /*# sourceMappingURL=main.css.map */
