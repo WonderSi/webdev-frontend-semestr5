@@ -71,6 +71,13 @@ header {
     display: flex;
   }
 
+  .nav {
+    flex-direction: row;
+    font-size: var(--text-xs);
+    padding: 5px 16px;
+    position: relative;
+  }
+
   .nav_menu {
     position: absolute;
     top: 100%;
@@ -101,5 +108,13 @@ header {
 
   .nav_menu a:last-child {
     border-bottom: none;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+    font-size: var(--text-sm);
   }
 }
