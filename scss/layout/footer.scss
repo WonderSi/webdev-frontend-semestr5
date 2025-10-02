@@ -1,0 +1,15 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #00000050;
+    padding: 24px;
+    font-size: var(--text-lg);
+}
+
+footer div:last-child {
+    transition: all 0.3s ease;
+}
+
+footer div:last-child:hover {
+    transform: scale(1.05);
+}
