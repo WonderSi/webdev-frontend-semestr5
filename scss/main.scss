@@ -1,20 +1,20 @@
-@use 'base/reset.scss';
-@use 'base/root.scss';
-@use 'base/typography.scss';
+@use 'base/_reset.scss';
+@use 'base/_root.scss';
+@use 'base/_typography.scss';
 
-@use 'layout/container.scss';
-@use 'layout/footer.scss';
-@use 'layout/header.scss';
-@use 'layout/main.scss';
-@use 'layout/tsparticles.scss';
+@use 'layout/_container.scss';
+@use 'layout/_footer.scss';
+@use 'layout/_header.scss';
+@use 'layout/_main.scss';
+@use 'layout/_tsparticles.scss';
 
-@use 'components/button.scss';
-@use 'components/card.scss';
-@use 'components/carousel.scss';
-@use 'components/modal.scss';
-@use 'components/toast.scss';
+@use 'components/_button.scss';
+@use 'components/_card.scss';
+@use 'components/_carousel.scss';
+@use 'components/_modal.scss';
+@use 'components/_toast.scss';
 
-@use 'pages/about.scss';
-@use 'pages/contacts.scss';
-@use 'pages/portfolio.scss';
-@use 'pages/skills.scss';
+@use 'pages/_about.scss';
+@use 'pages/_contacts.scss';
+@use 'pages/_portfolio.scss';
+@use 'pages/_skills.scss';
