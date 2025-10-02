@@ -1,0 +1,17 @@
+button {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    background: var(--primary-white);
+    border: none;
+    color: var(--primary-black);
+    font-size: var(--text-lg);
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
