@@ -367,3 +367,19 @@ $(document).ready(function() {
             console.error('Не удалось загрузить данные портфолио');
         });
 });
+
+$(document).ready(function() {
+  const themeToggle = $('#themeToggle');
+  const html = $('html'); // ← меняем body на html
+
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  if (savedTheme === 'light') {
+    html.addClass('theme-light');
+  }
+
+  themeToggle.on('click', function() {
+    html.toggleClass('theme-light');
+    const isLight = html.hasClass('theme-light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+});

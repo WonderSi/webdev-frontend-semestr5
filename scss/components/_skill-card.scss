@@ -4,7 +4,7 @@
 .skill-card {
     @include flex-center();
     gap: 30px;
-    background-color: $color-black;
+    background-color: var(--primary-black);
     padding: 20px 30px;
     min-width: fit-content;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -15,11 +15,11 @@
     @include flex-center();
     width: 48px;
     height: 48px;
-    background-color: $color-white;
+    background-color: var(--primary-white);
 }
 
 .skill-card__info {
-    color: $color-white;
+    color: var(--primary-white);
     white-space: nowrap;
     flex-shrink: 0;
     div:first-child { font-weight: 900; }

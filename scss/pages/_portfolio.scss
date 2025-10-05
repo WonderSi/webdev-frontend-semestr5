@@ -3,7 +3,8 @@
 
 .portfolio__title {
     @include flex-center();
-    font-size: $font-size-xl;
+    font-size: var(--text-xl);
     font-weight: 700;
     padding: 50px;
+    color: var(--text-color);
 }

@@ -1,7 +1,12 @@
+// Сначала — значения
 $color-black: #1b1b1b;
 $color-white: #e5e5e5;
 $color-focus: #007bff;
 $color-border: #333;
+
+$color-light-bg: #ffffff;
+$color-light-text: #1b1b1b;
+$color-light-border: #ccc;
 
 $font-primary: "Nunito", "Roboto", "Helvetica", "Arial", sans-serif;
 $font-secondary: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -25,3 +30,45 @@ $breakpoint-tablet-min: 768px;
 $breakpoint-tablet-max: 1023px;
 $breakpoint-desktop-min: 1024px;
 
+// Только потом — экспорт в CSS-переменные
+:root {
+  --bg-color: #{$color-black};
+  --text-color: #{$color-white};
+  --border-color: #{$color-border};
+  --focus-color: #{$color-focus};
+  --primary-black: #{$color-black};
+  --primary-white: #{$color-white};
+}
+
+:root.theme-light {
+  --bg-color: #{$color-light-bg};
+  --text-color: #{$color-light-text};
+  --border-color: #{$color-light-border};
+  --focus-color: #{$color-focus};
+  --primary-black: #{$color-white};
+  --primary-white: #{$color-black};
+}
+
+:root {
+  --mobile-max: #{$breakpoint-mobile-max};
+  --tablet-min: #{$breakpoint-tablet-min};
+  --tablet-max: #{$breakpoint-tablet-max};
+  --desktop-min: #{$breakpoint-desktop-min};
+
+  --text-xs: #{$font-size-xs};
+  --text-sm: #{$font-size-sm};
+  --text-base: #{$font-size-base};
+  --text-lg: #{$font-size-lg};
+  --text-xl: #{$font-size-xl};
+  --text-2xl: #{$font-size-2xl};
+  --text-3xl: #{$font-size-3xl};
+  --text-4xl: #{$font-size-4xl};
+  --text-5xl: #{$font-size-5xl};
+  --text-6xl: #{$font-size-6xl};
+  --text-7xl: #{$font-size-7xl};
+  --text-8xl: #{$font-size-8xl};
+  --text-9xl: #{$font-size-9xl};
+
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+}

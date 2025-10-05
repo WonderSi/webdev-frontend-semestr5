@@ -5,7 +5,8 @@
     justify-content: space-between;
     background-color: #00000050;
     padding: 24px;
-    font-size: $font-size-lg;
+    font-size: var(--text-lg);
+    color: var(--primary-white);
 }
 
 .footer__source {

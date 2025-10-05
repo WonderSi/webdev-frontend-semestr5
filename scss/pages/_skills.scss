@@ -3,15 +3,16 @@
 
 .skills__title {
     @include flex-center();
-    font-size: $font-size-xl;
+    font-size: var(--text-xl);
     font-weight: 700;
     padding: 50px;
+    color: var(--text-color);
 }
 
 .skills__list {
     display: flex;
     gap: 40px;
-    background-color: $color-white;
+    background-color: var(--bg-color);
     padding: 20px 40px;
     overflow: hidden;
     white-space: nowrap;

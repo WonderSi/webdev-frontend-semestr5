@@ -1,12 +1,10 @@
-@use '../utils/variables' as *;
-
 .form__btn,
 .contacts__feedback-btn {
-    font-family: $font-secondary;
-    background: $color-white;
+    font-family: var(--font-secondary, "Roboto", "Helvetica", "Arial", sans-serif);
+    background: var(--primary-white);
     border: none;
-    color: $color-black;
-    font-size: $font-size-lg;
+    color: var(--primary-black);
+    font-size: var(--text-lg);
     padding: 10px;
     transition: all 0.3s ease;
     &:hover { transform: scale(1.05); }

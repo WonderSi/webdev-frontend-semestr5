@@ -10,8 +10,9 @@
     @include flex-center(column);
     gap: 25px;
     user-select: none;
-    .about__name { font-size: $font-size-6xl; };
-    .about__status { font-size: $font-size-xl; };
+    color: var(--text-color);
+    .about__name { font-size: var(--text-6xl); };
+    .about__status { font-size: var(--text-xl); };
 }
 
 .about__photo {
@@ -28,9 +29,9 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: $color-white;
-    color: $color-black;
-    font-size: $font-size-xl;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: var(--text-xl);
     padding: 50px 100px;
     div:first-child { font-weight: bold; }
 }
@@ -40,7 +41,7 @@
         padding: 32px 16px;
     }
     .about__info {
-        font-size: $font-size-xs;
+        font-size: var(--text-xs);
         padding: 25px 16px;
     }
 }
