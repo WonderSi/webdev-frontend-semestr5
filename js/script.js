@@ -1,17 +1,17 @@
 $(document).ready(function() {
-    $('#burgerMenu').click(function() {
+    $('.header__burger').click(function() {
         $(this).toggleClass('active');
-        $('#navMenu').toggleClass('active');
+        $('.header__menu').toggleClass('active');
     });
-    $('#navMenu a').click(function() {
-        $('#burgerMenu').removeClass('active');
-        $('#navMenu').removeClass('active');
+    $('.header__menu a').click(function() {
+        $('.header__burger').removeClass('active');
+        $('.header__menu').removeClass('active');
     });
     $(document).click(function(event) {
         var target = $(event.target);
-        if (!target.closest('#burgerMenu').length && !target.closest('#navMenu').length) {
-            $('#burgerMenu').removeClass('active');
-            $('#navMenu').removeClass('active');
+        if (!target.closest('.header__burger').length && !target.closest('.header__menu').length) {
+            $('.header__burger').removeClass('active');
+            $('.header__menu').removeClass('active');
         }
     });
 });
@@ -22,7 +22,7 @@ $(document).ready(function() {
 
         setTimeout(function() {
             $('#feedbackForm')[0].reset();
-            $('#feedbackForm .form_group').removeClass('error');
+            $('.form_group').removeClass('error');
         }, 300)
     }
 
@@ -49,16 +49,16 @@ $(document).ready(function() {
         return isValid
     }
 
-    $('.open_modal_btn').on('click', function() {
+    $('.contacts__feedback-btn').on('click', function() {
         const modalId = $(this).data('modal');
         $(`#${modalId}`).addClass('show');
     })
 
-    $('.close_modal').on('click', function() {
+    $('.modal__close').on('click', function() {
         closeModal();
     });
 
-    $('.btn_cancel').on('click', function() {
+    $('.form__btn--cancel').on('click', function() {
         closeModal();
     });
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
             return
         }
 
-        const submitBtn = $('.btn_submit');
+        const submitBtn = $('.form__btn--submit');
         const originalText = submitBtn.text();
         submitBtn.prop('disabled', true).text('Отправка...');
 
@@ -114,7 +114,7 @@ $(document).ready(function() {
                         });
 
                     setTimeout(function() {
-                        $('#successModal .toast_content').css({
+                        $('#successModal .toast__content').css({
                             'transform': 'translateY(-30px)',
                             'opacity': '0'
                             });
@@ -128,13 +128,13 @@ $(document).ready(function() {
 
                 setTimeout(function() {
                     $('#errorModal').addClass('show');
-                    $('#errorModal .toast_content').css({
+                    $('#errorModal .toast__content').css({
                         'transform': 'translateY(0)',
                         'opacity': '1'
                         });
 
                     setTimeout(function() {
-                        $('#errorModal .toast_content').css({
+                        $('#errorModal .toast__content').css({
                             'transform': 'translateY(-30px)',
                             'opacity': '0'
                             });
@@ -163,7 +163,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     const sections = $("section");
-    const navLinks = $("#navMenu a");
+    const navLinks = $(".header__link");
     const navHeight = $("header").outerHeight() || 60;
 
     function updateActiveNav() {
@@ -232,7 +232,7 @@ $(document).ready(function() {
 
     function createCarouselSlide(project) {
         const slideHTML = `
-            <div class="carousel_slide type_${project.type}" data-project-id="${project.id}">
+            <div class="carousel__slide type_${project.type}" data-project-id="${project.id}">
                 <img src="${project.image}" alt="${project.title}">
                 ${project.additionalImage ? `<img src="${project.additionalImage}" alt="${project.title}">` : ''}
                 <div class="slide_content">
@@ -247,7 +247,7 @@ $(document).ready(function() {
     function createCarouselDots(count) {
         let dotsHTML = '';
         for (let i = 0; i < count; i++) {
-            dotsHTML += `<span class="carousel_dot ${i === 0 ? 'active' : ''}" data-slide="${i}"></span>`;
+            dotsHTML += `<span class="carousel__dot ${i === 0 ? 'active' : ''}" data-slide="${i}"></span>`;
         }
         return dotsHTML;
     }
@@ -258,10 +258,10 @@ $(document).ready(function() {
 
         currentSlide = slideIndex;
         const translateX = -currentSlide * 100;
-        $('.carousel_slides').css('transform', `translateX(${translateX}%)`);
+        $('.carousel__slides').css('transform', `translateX(${translateX}%)`);
 
-        $('.carousel_dot').removeClass('active');
-        $(`.carousel_dot[data-slide="${currentSlide}"]`).addClass('active');
+        $('.carousel__dot').removeClass('active');
+        $(`.carousel__dot[data-slide="${currentSlide}"]`).addClass('active');
     }
 
     function nextSlide() {
@@ -332,22 +332,22 @@ $(document).ready(function() {
         resetCarousel();
     });
 
-    $(document).on('click', '.carousel_dot', function() {
+    $(document).on('click', '.carousel__dot', function() {
         const slideIndex = parseInt($(this).data('slide'));
         goToSlide(slideIndex);
         resetCarousel();
     });
 
-    $(document).on('mouseenter', '.carousel_slide', function() {
+    $(document).on('mouseenter', '.carousel__slide', function() {
         stopAutoSlide();
         stopInactivityTimer();
     });
 
-    $(document).on('mouseleave', '.carousel_slide', function() {
+    $(document).on('mouseleave', '.carousel__slide', function() {
         startInactivityTimer();
     });
 
-    $('.carousel_btn, .carousel_dot').hover(
+    $('.carousel__btn, .carousel__dot').hover(
         function() {
             stopAutoSlide();
             stopInactivityTimer();
