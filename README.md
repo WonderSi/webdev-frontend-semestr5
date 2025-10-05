@@ -1,4 +1,4 @@
-# 🎓 Лабораторная работа №2: Введение в jQuery — динамическое поведение страницы
+# 🎓 Лабораторная работа №3: Введение в препроцессор стилей
 
 ![HTML5](https://img.shields.io/badge/HTML5-Structure-orange?style=for-the-badge&logo=html5)
 ![CSS3](https://img.shields.io/badge/CSS3-Styling-blue?style=for-the-badge&logo=css3)
@@ -19,55 +19,48 @@
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Архитектура**:
 ```
-lab2-portfolio-jquery/        <-- репозиторий
-├─ index.html           # Главная страница
-├─ css/
-│  └─ styles.css        # Основные ситили
-├── github/             # Файлы необходимые GitHub
-├─ js/
-│  └─ script.js         # js с использование jQuery
-├─ data/
-│  └─ portfolio.json    # Данные карточек портфолио
-├── assets/
-│ ├── images/           # Изображения 
-│ └── fonts/            # Шрифты
+lab3-portfolio-scss/ <-- репозиторий
+├─ scss/ <-- рабочие файлы стилей
+│ ├─ base/ <-- reset, normalize, typography
+│ ├─ components/ <-- кнопки, карточки, модалки
+│ ├─ layout/ <-- header, footer, grid-системы
+│ ├─ pages/ <-- стили для отдельных страниц
+│ ├─ themes/ <-- светлая/тёмная темы
+│ ├─ utils/ <-- переменные, миксины, функции
+│ └─ main.scss <-- точка входа
+├─ index.html
+├─ ...
 ├─ README.md
-└─ .gitignore 
+└─ .gitignore
 ```
 
 ## Чек лист
-
-✔️ **Подключена библиотека jQuery через CDN**
-```
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-links@2.12.0/tsparticles.preset.links.bundle.min.js" integrity="sha256-Kq9IblhtnUOu75DRD4BIgJ4p4/7JUMMy6eXI/YcTo0c=" crossorigin="anonymous" async="" defer="" onload="setupParticlesBackground()"></script>
-```
----
-✔️ **Реализована форма обратной связи с симуляцией отправки данных** <br/>
-✔️ **Реализовано модальное окно** <br/>
-✔️ **Валидация форм и полей ввода** <br/>
-![](./github/screenshot5.png)
+✔️**Реализовано переключение темной / светлой темы** <br/>
 
 ---
-✔️ **Реализовано выпадающее меню** <br/>
-![](./github/screenshot6.png)
+✔️**Используются переменные (цвета, размеры, шрифты)** <br/>
 
 ---
-✔️ **Карусель навыков или изображений работает с кнопками и автопрокруткой** <br/> 
-✔️ **Галерея портфолио загружается из JSON** <br/>
-![](./github/screenshot7.png)
+✔️**Используется вложенность (≤3 уровней)** <br/>
 
 ---
-✔️ **Подсветка активного пункта меню при скролле** <br/>
-✔️ **Кнопка «Вверх» с плавным скроллом** <br/>
-![](./github/screenshot8.png) <br/>
-За ф-цию кнопки "Вверх" отвечает лого "WonderSi", а при скорлле страницы пункты меню имеют жирный стиль
+✔️**Реализованы хотя бы 2 миксина (например: медиа-запросы и центрирование flex/grid)** <br/>
 
 ---
-✔️ **Корректная структура проекта (папки js/, data/, css/)**
+✔️**Проект структурирован по папкам (`base`, `components`, `layout`, `utils`, `themes`, …)** <br/>
 
 ---
-✔️ **Применена хотя бы одна анимация** <br/>
-Скрол страницы, карусель навыков и портфолио...
+✔️**Минимум один компонент оформлен по правилам (например, кнопка с состояниями)** <br/>
+
+---
+✔️**Собранный CSS лежит в отдельной папке (`dist/css/`)** <br/>
+
+---
+✔️**README.md содержит описание проекта** <br/>
+
+---
+✔️**Репозиторий содержит ≥3 осмысленных коммита** <br/>
+
 
 ## Установка / Запуск
 
@@ -75,11 +68,15 @@ lab2-portfolio-jquery/        <-- репозиторий
 ```
 git clone https://github.com/WonderSi/webdev-frontend-semestr5.git
 ```
-2. Переключитесь на ветку `lab2-portfolio-jquery`:
+2. Переключитесь на ветку `lab3-portfolio-scss`:
 ```
-git checkout lab2-portfolio-jquery
+git checkout lab3-portfolio-scss
 ```
 3. Откройте файл `index.html` в браузере:
+
+---
+Выполнил Козлов Кирилл ФИТ-231
+
 
 
 
