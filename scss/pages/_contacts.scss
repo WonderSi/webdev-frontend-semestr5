@@ -1,9 +1,8 @@
 @use '../utils/variables' as *;
+@use '../utils/mixins' as *;
 
 .contacts__title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center();
     font-size: $font-size-xl;
     font-weight: 700;
     padding: 25px 16px;
@@ -49,7 +48,7 @@
     }
 }
 
-@media screen and (max-width: $breakpoint-mobile-max) {
+@include respond-to(mobile) {
     .contacts__title {
         padding: 25px 16px;
     }
@@ -60,7 +59,7 @@
     }
 }
 
-@media screen and (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
+@include respond-to(tablet) {
     .contacts__title {
         padding: 40px 75px;
     }

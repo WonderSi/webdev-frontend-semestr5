@@ -1,41 +1,40 @@
 @use '../utils/variables' as *;
+@use '../utils/mixins' as *;
 
 .skills__title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: $font-size-xl;
-  font-weight: 700;
-  padding: 50px;
+    @include flex-center();
+    font-size: $font-size-xl;
+    font-weight: 700;
+    padding: 50px;
 }
 
 .skills__list {
-  display: flex;
-  gap: 40px;
-  background-color: $color-white;
-  padding: 20px 40px;
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  width: 100%;
+    display: flex;
+    gap: 40px;
+    background-color: $color-white;
+    padding: 20px 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
 }
 
 .skills__container {
-  display: flex;
-  gap: 40px;
-  animation: slide-back-forth 8s ease-in-out infinite alternate;
-  will-change: transform;
-  &:hover { animation-play-state: paused !important; }
+    display: flex;
+    gap: 40px;
+    animation: slide-back-forth 8s ease-in-out infinite alternate;
+    will-change: transform;
+    &:hover { animation-play-state: paused !important; }
 }
 
 @keyframes slide-back-forth {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-100% + 100vw - 100px)); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% + 100vw - 100px)); }
 }
 
-@media (max-width: $breakpoint-mobile-max) {
-  .skills__title { padding: 25px 16px; }
+@include respond-to(mobile) {
+    .skills__title { padding: 25px 16px; }
 }
-@media (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
-  .skills__title { padding: 40px 75px; }
+@include respond-to(tablet) {
+    .skills__title { padding: 40px 75px; }
 }

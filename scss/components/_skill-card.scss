@@ -1,9 +1,8 @@
 @use '../utils/variables' as *;
+@use '../utils/mixins' as *;
 
 .skill-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center();
     gap: 30px;
     background-color: $color-black;
     padding: 20px 30px;
@@ -13,9 +12,7 @@
 }
 
 .skill-card__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center();
     width: 48px;
     height: 48px;
     background-color: $color-white;

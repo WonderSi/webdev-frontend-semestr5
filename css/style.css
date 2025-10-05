@@ -188,6 +188,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   gap: 30px;
   background-color: #1b1b1b;
   padding: 20px 30px;
@@ -202,6 +203,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   width: 48px;
   height: 48px;
   background-color: #e5e5e5;
@@ -337,7 +339,7 @@ main {
   background-color: #007bff;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .carousel__container {
     padding: 0 50px;
   }
@@ -365,9 +367,9 @@ main {
   background-color: rgba(0, 0, 0, 0.9);
 }
 .modal.show {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  display: grid;
+  place-items: center;
 }
 
 .modal__content {
@@ -458,9 +460,9 @@ main {
   height: 100%;
 }
 .toast.show {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  display: grid;
+  place-items: center;
 }
 
 .toast__content {
@@ -492,9 +494,9 @@ main {
 .about__main {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   gap: 25px;
   user-select: none;
 }
@@ -537,7 +539,7 @@ main {
     padding: 25px 16px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .about__info {
     padding: 25px 75px;
   }
@@ -546,6 +548,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   font-size: 1.25rem;
   font-weight: 700;
   padding: 25px 16px;
@@ -610,6 +613,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   font-size: 1.25rem;
   font-weight: 700;
   padding: 50px;
@@ -619,6 +623,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   font-size: 1.25rem;
   font-weight: 700;
   padding: 50px;
@@ -653,12 +658,12 @@ main {
     transform: translateX(calc(-100% + 100vw - 100px));
   }
 }
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .skills__title {
     padding: 25px 16px;
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .skills__title {
     padding: 40px 75px;
   }

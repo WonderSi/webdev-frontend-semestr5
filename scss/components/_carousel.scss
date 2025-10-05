@@ -1,4 +1,5 @@
 @use '../utils/variables' as *;
+@use '../utils/mixins' as *;
 
 .portfolio__carousel {
   padding: 20px 0;
@@ -104,7 +105,7 @@
   &:hover { background-color: $color-focus; }
 }
 
-@media (max-width: $breakpoint-mobile-max) {
+@include respond-to(mobile) {
   .carousel__container { padding: 0 50px; }
   .carousel__slide {
     .slide_title { font-size: $font-size-xl; }
