@@ -1,17 +1,16 @@
 @use 'utils/variables';
 
 @use 'base/reset';
-@use 'base/root';
 @use 'base/typography';
 
 @use 'layout/container';
-@use 'layout/footer';
+@use 'layout/tsparticles';
 @use 'layout/header';
 @use 'layout/main';
-@use 'layout/tsparticles';
+@use 'layout/footer';
 
 @use 'components/button';
-@use 'components/card';
+@use 'components/skill-card';
 @use 'components/carousel';
 @use 'components/modal';
 @use 'components/toast';

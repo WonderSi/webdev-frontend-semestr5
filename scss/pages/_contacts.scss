@@ -1,68 +1,67 @@
-.contacts_main {
+@use '../utils/variables' as *;
+
+.contacts__title {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--text-xl);
+    font-size: $font-size-xl;
     font-weight: 700;
     padding: 25px 16px;
 }
 
-.contacts_info {
+.contacts__info {
     display: flex;
     align-items: start;
     justify-content: space-between;
     padding: 0px 140px;
 }
 
-.contacts_info_card {
+.contacts__card {
     display: flex;
     flex-direction: column;
     align-items: start;
     margin-bottom: 30px;
-}
-
-.contacts_info_card p:first-child {
-    font-size: var(--text-2xl);
-    margin-bottom: 15px;
+    p:first-child {
+        font-size: $font-size-2xl;
+        margin-bottom: 15px;
+    }
 }
 
 .contacts_info_card button {
     margin-top: 25px;
 }
 
-.contacts_info_card_a {
+.contacts__socials {
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
     gap: 10px;
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
 }
 
-.contacts_info_card_a_section a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-}
-
-.contacts_info_card_a_section a:hover {
-    transform: scale(1.05);
-}
-
-@media screen and (max-width: 767px) {
-    .contacts_main {
+@media screen and (max-width: $breakpoint-mobile-max) {
+    .contacts__title {
         padding: 25px 16px;
     }
-    .contacts_info {
+    .contacts__info {
         justify-content: center;
         flex-direction: column;
         padding: 0px 25px;
     }
 }
 
-@media screen and (min-width: 767px) and (max-width: 1023px) {
-    .contacts_main {
+@media screen and (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
+    .contacts__title {
         padding: 40px 75px;
     }
 }

@@ -1,10 +1,12 @@
+@use '../utils/variables' as *;
+
 body {
-    background: var(--primary-black);
-    color: var(--primary-white);
-    font-family: "Nunito", "Roboto", "Helvetica", "Arial", sans-serif;
+    background: $color-black;
+    color: $color-white;
+    font-family: $font-primary
 }
 
 a {
-    color: var(--primary-white);
+    color: $color-white;
     text-decoration: none;
 }

@@ -1,8 +1,10 @@
+@use '../utils/variables' as *;
+
 .about {
     min-height: 100vh;
 }
 
-.about_main {
+.about__main {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -10,56 +12,43 @@
     justify-content: center;
     gap: 25px;
     user-select: none;
+    .about__name { font-size: $font-size-6xl; };
+    .about__status { font-size: $font-size-xl; };
 }
 
-.about_main .name {
-    font-size: var(--text-6xl);
-}
-
-.about_main .status {
-    font-size: var(--text-xl);
-}
-
-.photo_user {
+.about__photo {
     width: 100px;
     border-radius: 100%;
 }
 
-.socials {
+.about__socials {
     display: flex;
     gap: 10px;
 }
 
-.has_tooltip {
-    width: 24px;
-}
-
-.about_info {
+.about__info {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: var(--primary-white);
-    color: var(--primary-black);
-    font-size: var(--text-xl);
+    background: $color-white;
+    color: $color-black;
+    font-size: $font-size-xl;
     padding: 50px 100px;
+    div:first-child { font-weight: bold; }
 }
 
-.about_info div {
-    font-weight: bold;
-}
-
-@media screen and (max-width: 767px) {
-    .about_main {
+@media screen and (max-width: $breakpoint-mobile-max) {
+    .about__main {
         padding: 32px 16px;
     }
-    .about_info {
-        font-size: var(--text-xs);
+    .about__info {
+        font-size: $font-size-xs;
         padding: 25px 16px;
     }
 }
 
-@media screen and (min-width: 767px) and (max-width: 1023px) {
-    .about_info {
+@media screen and (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-min) {
+    .about__info {
         padding: 25px 75px;
     }
 }

@@ -1,33 +1,29 @@
-.card {
+@use '../utils/variables' as *;
+
+.skill-card {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
-    background-color: var(--primary-black);
+    background-color: $color-black;
     padding: 20px 30px;
     min-width: fit-content;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    &:hover { transform: translateY(-5px) scale(1.05); }
 }
 
-.card:hover {
-    transform: translateY(-5px) scale(1.05);
-}
-
-.card_img {
+.skill-card__icon {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
-    background-color: var(--primary-white);
+    background-color: $color-white;
 }
 
-.card_info {
-    color: var(--primary-white);
+.skill-card__info {
+    color: $color-white;
     white-space: nowrap;
     flex-shrink: 0;
-}
-
-.card_info div:first-child {
-    font-weight: 900;
+    div:first-child { font-weight: 900; }
 }

@@ -1,15 +1,14 @@
-footer {
+@use '../utils/variables' as *;
+
+.footer {
     display: flex;
     justify-content: space-between;
     background-color: #00000050;
     padding: 24px;
-    font-size: var(--text-lg);
+    font-size: $font-size-lg;
 }
 
-footer div:last-child {
+.footer__source {
     transition: all 0.3s ease;
-}
-
-footer div:last-child:hover {
-    transform: scale(1.05);
+    &:hover { transform: scale(1.05); }
 }
