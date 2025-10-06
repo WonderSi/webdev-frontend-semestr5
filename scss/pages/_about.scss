@@ -10,7 +10,8 @@
     @include flex-center(column);
     gap: 25px;
     user-select: none;
-    color: var(--text-color);
+    color: var(--text-primary-color);
+    transition: all 0.3s ease;
     .about__name { font-size: var(--text-6xl); };
     .about__status { font-size: var(--text-xl); };
 }
@@ -25,14 +26,24 @@
     gap: 10px;
 }
 
+.about__social-item {
+    a {
+        svg {
+            color: var(--icon-color);
+            transition: color 0.3s ease;
+        }
+    }    
+}
+
 .about__info {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: var(--bg-color);
-    color: var(--text-color);
+    background: var(--bg-secondary-color);
+    color: var(--text-secondary-color);
     font-size: var(--text-xl);
     padding: 50px 100px;
+    transition: all 0.3s ease;
     div:first-child { font-weight: bold; }
 }
 

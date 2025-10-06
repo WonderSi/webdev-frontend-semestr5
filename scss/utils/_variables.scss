@@ -1,11 +1,7 @@
-// Сначала — значения
 $color-black: #1b1b1b;
 $color-white: #e5e5e5;
 $color-focus: #007bff;
 $color-border: #333;
-
-$color-light-bg: #ffffff;
-$color-light-text: #1b1b1b;
 $color-light-border: #ccc;
 
 $font-primary: "Nunito", "Roboto", "Helvetica", "Arial", sans-serif;
@@ -30,23 +26,30 @@ $breakpoint-tablet-min: 768px;
 $breakpoint-tablet-max: 1023px;
 $breakpoint-desktop-min: 1024px;
 
-// Только потом — экспорт в CSS-переменные
 :root {
-  --bg-color: #{$color-black};
-  --text-color: #{$color-white};
+  --bg-primary-color: #{$color-black};
+  --bg-secondary-color: #{$color-white};
+  --text-primary-color: #{$color-white};
+  --text-secondary-color: #{$color-black};
   --border-color: #{$color-border};
   --focus-color: #{$color-focus};
   --primary-black: #{$color-black};
   --primary-white: #{$color-white};
+  --icon-color: #{$color-white};
+  --icon-card-color: #{$color-black};
 }
 
 :root.theme-light {
-  --bg-color: #{$color-light-bg};
-  --text-color: #{$color-light-text};
+  --bg-primary-color: #{$color-white};
+  --bg-secondary-color: #{$color-black};
+  --text-primary-color: #{$color-black};
+  --text-secondary-color: #{$color-white};
   --border-color: #{$color-light-border};
   --focus-color: #{$color-focus};
   --primary-black: #{$color-white};
   --primary-white: #{$color-black};
+  --icon-color: #{$color-black};
+  --icon-card-color: #{$color-white};
 }
 
 :root {

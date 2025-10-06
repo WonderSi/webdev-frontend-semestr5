@@ -4,10 +4,10 @@
 .skill-card {
     @include flex-center();
     gap: 30px;
-    background-color: var(--primary-black);
+    background-color: var(--bg-primary-color);
     padding: 20px 30px;
     min-width: fit-content;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     &:hover { transform: translateY(-5px) scale(1.05); }
 }
 
@@ -15,11 +15,15 @@
     @include flex-center();
     width: 48px;
     height: 48px;
-    background-color: var(--primary-white);
+    background-color: var(--bg-secondary-color);
+    transition: all 0.3s ease;
+    svg {
+        color: var(--icon-card-color);
+    }
 }
 
 .skill-card__info {
-    color: var(--primary-white);
+    color: var(--text-primary-color);
     white-space: nowrap;
     flex-shrink: 0;
     div:first-child { font-weight: 900; }

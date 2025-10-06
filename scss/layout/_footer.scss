@@ -3,10 +3,12 @@
 .footer {
     display: flex;
     justify-content: space-between;
-    background-color: #00000050;
+    backdrop-filter: blur(1px);
+    background-color: var(--bg-primary-color);
     padding: 24px;
     font-size: var(--text-lg);
     color: var(--primary-white);
+    transition: all 0.3s ease;
 }
 
 .footer__source {
