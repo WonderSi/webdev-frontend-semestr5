@@ -6,15 +6,21 @@
     <title>Портфолио</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div id="tsparticles"></div>
     <header>
         <nav class="nav">
-            <div class="nav_brand">
+            <div id="up" class="nav_brand">
                 <h1>WonderSi</h1>
             </div>
-            <div class="nav_menu">
+            <button class="burger_menu" id="burgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav_menu" id="navMenu">
                 <a href="#about">ABOUT</a>
                 <a href="#skills">SKILLS</a>
                 <a href="#portfolio">PORTFOLIO</a>
@@ -30,7 +36,7 @@
                 <p class="name">WonderSi</p>
                 <p class="status">Student / Developer</p>
                 <div class="socials">
-                    <div class="has-tooltip">
+                    <div class="has_tooltip">
                         <a href="https://github.com/WonderSi" target="_blank">
                             <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -43,7 +49,7 @@
                             </svg>    
                         </a>
                     </div>
-                    <div class="has-tooltip">
+                    <div class="has_tooltip">
                         <a href="https://steamcommunity.com/profiles/76561199036452315" target="_blank">
                             <svg fill="#e5e5e5" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.102 12.129c0-0 0-0 0-0.001 0-1.564 1.268-2.831 2.831-2.831s2.831 1.268 2.831 2.831c0 1.564-1.267 2.831-2.831 2.831-0 0-0 0-0.001 0h0c-0 0-0 0-0.001 0-1.563 0-2.83-1.267-2.83-2.83 0-0 0-0 0-0.001v0zM24.691 12.135c0-2.081-1.687-3.768-3.768-3.768s-3.768 1.687-3.768 3.768c0 2.081 1.687 3.768 3.768 3.768v0c2.080-0.003 3.765-1.688 3.768-3.767v-0zM10.427 23.76l-1.841-0.762c0.524 1.078 1.611 1.808 2.868 1.808 1.317 0 2.448-0.801 2.93-1.943l0.008-0.021c0.155-0.362 0.246-0.784 0.246-1.226 0-1.757-1.424-3.181-3.181-3.181-0.405 0-0.792 0.076-1.148 0.213l0.022-0.007 1.903 0.787c0.852 0.364 1.439 1.196 1.439 2.164 0 1.296-1.051 2.347-2.347 2.347-0.324 0-0.632-0.066-0.913-0.184l0.015 0.006zM15.974 1.004c-7.857 0.001-14.301 6.046-14.938 13.738l-0.004 0.054 8.038 3.322c0.668-0.462 1.495-0.737 2.387-0.737 0.001 0 0.002 0 0.002 0h-0c0.079 0 0.156 0.005 0.235 0.008l3.575-5.176v-0.074c0.003-3.12 2.533-5.648 5.653-5.648 3.122 0 5.653 2.531 5.653 5.653s-2.531 5.653-5.653 5.653h-0.131l-5.094 3.638c0 0.065 0.005 0.131 0.005 0.199 0 0.001 0 0.002 0 0.003 0 2.342-1.899 4.241-4.241 4.241-2.047 0-3.756-1.451-4.153-3.38l-0.005-0.027-5.755-2.383c1.841 6.345 7.601 10.905 14.425 10.905 8.281 0 14.994-6.713 14.994-14.994s-6.713-14.994-14.994-14.994c-0 0-0.001 0-0.001 0h0z"></path>
@@ -204,40 +210,24 @@
         <!-- portfolio -->
         <section id="portfolio" class="portfolio">
             <div class="portfolio_main">PORTFOLIO</div>
-            <div class="portfolio_info">
-                <div class="portfolio_info_card">
-                    <img src="./images/portfolio_1.png" alt="">
-                    <div class="text">
-                        <div class="info_name">
-                            <p>MINECRAFT - ITEMVAULT</p>
-                        </div>
-                        <div class="info_discription">
-                            <p>Веб-приложение для исследования предметов Minecraft с возможностью поиска, сортировки и управления избранным. Использует стороннее API - Minecraft Items API. Написан на HTML, CSS, JavaScript. Архитектура: MVC</p>
+            <div class="portfolio_carousel">
+                <div class="carousel_container">
+                    <div class="carousel_wrapper">
+                        <div class="carousel_slides" id="carouselSlides">
                         </div>
                     </div>
+                    <button class="carousel_btn carousel_prev" id="carouselPrev">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="carousel_btn carousel_next" id="carouselNext">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
-                <div class="portfolio_info_card_inline">
-                    <img src="./images/portfolio_2.png" alt="">
-                    <div class="text">
-                        <div class="info_name">
-                            <p>RAWG GAMES TELEGRAM BOT</p>
-                        </div>
-                        <div class="info_discription">
-                            <p>Telegram-бот для поиска информации об играх с RAWG API. Проект написан на Python с использованием фреймворка aiogram. Реализован полноценный backend для обработки API-запросов</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio_info_card">
-                    <img src="./images/portfolio_3.png" alt="">
-                    <img src="./images/portfolio_4.png" alt="">
-                    <div class="text">
-                        <div class="info_name">
-                            <p>MOTODRIVE</p>
-                        </div>
-                        <div class="info_discription">
-                            <p>Одностраничный сайт для бронирования мотоциклов. Хотя в этом проекте не использовались особые технологии, именно с него началось моё изучение фреймворка React, создание макетов для страниц и работа с шаблонной архитектурой.</p>
-                        </div>
-                    </div>
+                <div class="carousel_dots" id="carouselDots">
                 </div>
             </div>
         </section>
@@ -250,7 +240,7 @@
                     <div class="contacts_info_card_a">
                         <div class="contacts_info_card_a_section">
                             <a href="https://github.com/WonderSi" target="_blank">
-                                <div class="has-tooltip">
+                                <div class="has_tooltip">
                                     <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#e5e5e5">
@@ -267,7 +257,7 @@
                         
                         <div class="contacts_info_card_a_section">
                             <a href="mailto:kirillkozlov00@gmail.com" target="_blank">
-                                <div class="has-tooltip">   
+                                <div class="has_tooltip">   
                                     <svg fill="#000000" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                         <title>gmail</title>
                                         <path fill="#e5e5e5" d="M30.996 7.824v17.381c0 0 0 0 0 0.001 0 1.129-0.915 2.044-2.044 2.044-0 0-0 0-0.001 0h-4.772v-11.587l-8.179 6.136-8.179-6.136v11.588h-4.772c0 0 0 0-0 0-1.129 0-2.044-0.915-2.044-2.044 0-0 0-0.001 0-0.001v0-17.381c0-0 0-0.001 0-0.001 0-1.694 1.373-3.067 3.067-3.067 0.694 0 1.334 0.231 1.848 0.619l-0.008-0.006 10.088 7.567 10.088-7.567c0.506-0.383 1.146-0.613 1.84-0.613 1.694 0 3.067 1.373 3.067 3.067v0z"></path>
@@ -278,7 +268,7 @@
                         </div>
                         <div class="contacts_info_card_a_section">
                             <a href="https://t.me/vvonddersi">
-                                <div class="has-tooltip">
+                                <div class="has_tooltip">
                                     <svg fill="#000000" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                         <title>telegram</title>
                                         <path fill="#e5e5e5" d="M22.122 10.040c0.006-0 0.014-0 0.022-0 0.209 0 0.403 0.065 0.562 0.177l-0.003-0.002c0.116 0.101 0.194 0.243 0.213 0.403l0 0.003c0.020 0.122 0.031 0.262 0.031 0.405 0 0.065-0.002 0.129-0.007 0.193l0-0.009c-0.225 2.369-1.201 8.114-1.697 10.766-0.21 1.123-0.623 1.499-1.023 1.535-0.869 0.081-1.529-0.574-2.371-1.126-1.318-0.865-2.063-1.403-3.342-2.246-1.479-0.973-0.52-1.51 0.322-2.384 0.221-0.23 4.052-3.715 4.127-4.031 0.004-0.019 0.006-0.040 0.006-0.062 0-0.078-0.029-0.149-0.076-0.203l0 0c-0.052-0.034-0.117-0.053-0.185-0.053-0.045 0-0.088 0.009-0.128 0.024l0.002-0.001q-0.198 0.045-6.316 4.174c-0.445 0.351-1.007 0.573-1.619 0.599l-0.006 0c-0.867-0.105-1.654-0.298-2.401-0.573l0.074 0.024c-0.938-0.306-1.683-0.467-1.619-0.985q0.051-0.404 1.114-0.827 6.548-2.853 8.733-3.761c1.607-0.853 3.47-1.555 5.429-2.010l0.157-0.031zM15.93 1.025c-8.302 0.020-15.025 6.755-15.025 15.060 0 8.317 6.742 15.060 15.060 15.060s15.060-6.742 15.060-15.060c0-8.305-6.723-15.040-15.023-15.060h-0.002q-0.035-0-0.070 0z"></path>
@@ -292,13 +282,63 @@
                 <div class="contacts_info_card">
                     <p>Локация и время работы</p>
                     <div>
-                        <div>Россия</div>
-                        <div>UTC+7 (GMT+7)</d>
-                        <div>8:00 AM - 5:00 PM</div>
+                        Россия - UTC+7 (GMT+7)<br/>
+                        8:00 AM - 5:00 PM
                     </div>
+                    <button class="open_modal_btn" data-modal="feedbackModal">Обратная связь</button>
                 </div>
             </div>
         </section>
+        <div id="feedbackModal" class="modal">
+            <div class="modal_content">
+                <div class="modal_header">
+                    <h2>Форма обратной связи</h2>
+                    <button class="close_modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 329.269 329" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#ffffff" opacity="1" ></path></g></svg>
+                    </button>
+                </div>
+                <div class="modal_body">
+                    <form action="" id="feedbackForm">
+                        <div class="form_group">
+                            <label for="name">Имя *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form_group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form_group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form_group">
+                            <label for="messgae">Сообщение *</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <div class="form_actions">
+                            <button type="button" class="btn_cancel">Отмена</button>
+                            <button type="submit" class="btn_submit">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="successModal" class="modal_small">
+            <div class="toast_content">
+                <div class="toast_body">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 511.985 511.985" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M500.088 83.681c-15.841-15.862-41.564-15.852-57.426 0L184.205 342.148 69.332 227.276c-15.862-15.862-41.574-15.862-57.436 0-15.862 15.862-15.862 41.574 0 57.436l143.585 143.585c7.926 7.926 18.319 11.899 28.713 11.899 10.394 0 20.797-3.963 28.723-11.899l287.171-287.181c15.862-15.851 15.862-41.574 0-57.435z" fill="#1b1b1b" opacity="1" data-original="#000000"></path></g></svg>
+                    <p>Сообщение отправлено!</p>
+                </div>
+            </div>
+        </div>
+        <div id="errorModal" class="modal_small">
+            <div class="toast_content">
+                <div class="toast_body">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 329.269 329" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#1b1b1b" opacity="1" ></path></g></svg>
+                    <p>Ошибка при отправке!</p>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <div>© 2025-2025 WonderSi</div>
@@ -340,5 +380,6 @@
   }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-links@2.12.0/tsparticles.preset.links.bundle.min.js" integrity="sha256-Kq9IblhtnUOu75DRD4BIgJ4p4/7JUMMy6eXI/YcTo0c=" crossorigin="anonymous" async="" defer="" onload="setupParticlesBackground()"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>

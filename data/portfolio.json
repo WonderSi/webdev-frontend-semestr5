@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "MINECRAFT - ITEMVAULT",
+      "description": "Веб-приложение для исследования предметов Minecraft с возможностью поиска, сортировки и управления избранным. Использует стороннее API - Minecraft Items API. Написан на HTML, CSS, JavaScript. Архитектура: MVC",
+      "image": "./images/portfolio_1.png",
+      "type": "vertical"
+    },
+    {
+      "id": 2,
+      "title": "RAWG GAMES TELEGRAM BOT",
+      "description": "Telegram-бот для поиска информации об играх с RAWG API. Проект написан на Python с использованием фреймворка aiogram. Реализован полноценный backend для обработки API-запросов",
+      "image": "./images/portfolio_2.png",
+      "type": "vertical"
+    },
+    {
+      "id": 3,
+      "title": "MOTODRIVE",
+      "description": "Одностраничный сайт для бронирования мотоциклов. Хотя в этом проекте не использовались особые технологии, именно с него началось моё изучение фреймворка React, создание макетов для страниц и работа с шаблонной архитектурой.",
+      "image": "./images/portfolio_3.png",
+      "type": "vertical"
+    }
+  ]
+}
