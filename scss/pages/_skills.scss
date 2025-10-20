@@ -1,0 +1,43 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.skills__title {
+    @include flex-center();
+    font-size: var(--text-xl);
+    font-weight: 700;
+    padding: 50px;
+    color: var(--text-primary-color);
+    transition: all 0.3s ease;
+}
+
+.skills__list {
+    display: flex;
+    gap: 40px;
+    background-color: var(--bg-secondary-color);
+    padding: 20px 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.skills__container {
+    display: flex;
+    gap: 40px;
+    animation: slide-back-forth 8s ease-in-out infinite alternate;
+    will-change: transform;
+    &:hover { animation-play-state: paused !important; }
+}
+
+@keyframes slide-back-forth {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% + 100vw - 100px)); }
+}
+
+@include respond-to(mobile) {
+    .skills__title { padding: 25px 16px; }
+}
+@include respond-to(tablet) {
+    .skills__title { padding: 40px 75px; }
+}

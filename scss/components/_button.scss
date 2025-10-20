@@ -1,0 +1,17 @@
+.form__btn,
+.contacts__feedback-btn {
+    font-family: var(--font-secondary, "Roboto", "Helvetica", "Arial", sans-serif);
+    background: var(--primary-white);
+    border: none;
+    color: var(--primary-black);
+    font-size: var(--text-lg);
+    padding: 10px;
+    transition: all 0.3s ease;
+    &:hover { transform: scale(1.05); }
+    &:active { transform: scale(0.95); }
+}
+
+.form__btn--cancel,
+.form__btn--submit {
+    flex: 1;
+}

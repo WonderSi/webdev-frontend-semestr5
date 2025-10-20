@@ -1,0 +1,17 @@
+@use '../utils/variables' as *;
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    backdrop-filter: blur(1px);
+    background-color: var(--bg-primary-color);
+    padding: 24px;
+    font-size: var(--text-lg);
+    color: var(--primary-white);
+    transition: all 0.3s ease;
+}
+
+.footer__source {
+    transition: all 0.3s ease;
+    &:hover { transform: scale(1.05); }
+}

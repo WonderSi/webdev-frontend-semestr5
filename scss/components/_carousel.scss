@@ -1,0 +1,118 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.portfolio__carousel {
+  padding: 20px 0;
+  background-color: var(--bg-secondary-color);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.carousel__container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.carousel__wrapper { overflow: hidden; }
+
+.carousel__slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel__slide {
+  min-width: 100%;
+  position: relative;
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  transition: all 0.3s ease;
+  &.type_vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img { width: 100%; height: 100%; }
+  }
+  img { object-fit: cover; }
+  .slide_content {
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .slide_title {
+    font-size: var(--text-4xl);
+    font-weight: 900;
+    margin-bottom: 20px;
+    font-family: var(--font-secondary);
+  }
+  .slide_description {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+  .slide_links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  color: var(--)
+}
+
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+  border: none;
+  width: 50px;
+  height: 100px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+  svg { width: 30px; height: 30px; }
+}
+
+.carousel__btn--prev { left: 5px; }
+.carousel__btn--next { right: 5px; }
+
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.carousel__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--primary-black);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &.active {
+    background-color: var(--primary-black);
+    transform: scale(1.5);
+  }
+  &:hover { background-color: var(--focus-color); }
+}
+
+@include respond-to(mobile) {
+  .carousel__container { padding: 0 50px; }
+  .carousel__slide {
+    .slide_title { font-size: var(--text-xl); }
+    .slide_description { font-size: var(--text-sm); }
+    .slide_content { padding: 20px; }
+  }
+  .carousel__btn { width: 40px; }
+}

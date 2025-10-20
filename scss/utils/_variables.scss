@@ -1,0 +1,77 @@
+$color-black: #1b1b1b;
+$color-white: #e5e5e5;
+$color-focus: #007bff;
+$color-border: #333;
+$color-light-border: #ccc;
+
+$font-primary: "Nunito", "Roboto", "Helvetica", "Arial", sans-serif;
+$font-secondary: "Roboto", "Helvetica", "Arial", sans-serif;
+
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-lg: 1.125rem;   // 18px
+$font-size-xl: 1.25rem;    // 20px
+$font-size-2xl: 1.5rem;    // 24px
+$font-size-3xl: 1.875rem;  // 30px
+$font-size-4xl: 2.25rem;   // 36px
+$font-size-5xl: 3rem;      // 48px
+$font-size-6xl: 3.75rem;   // 60px
+$font-size-7xl: 4.5rem;    // 72px
+$font-size-8xl: 6rem;      // 96px
+$font-size-9xl: 8rem;      // 128px
+
+$breakpoint-mobile-max: 767px;
+$breakpoint-tablet-min: 768px;
+$breakpoint-tablet-max: 1023px;
+$breakpoint-desktop-min: 1024px;
+
+:root {
+  --bg-primary-color: #{$color-black};
+  --bg-secondary-color: #{$color-white};
+  --text-primary-color: #{$color-white};
+  --text-secondary-color: #{$color-black};
+  --border-color: #{$color-border};
+  --focus-color: #{$color-focus};
+  --primary-black: #{$color-black};
+  --primary-white: #{$color-white};
+  --icon-color: #{$color-white};
+  --icon-card-color: #{$color-black};
+}
+
+:root.theme-light {
+  --bg-primary-color: #{$color-white};
+  --bg-secondary-color: #{$color-black};
+  --text-primary-color: #{$color-black};
+  --text-secondary-color: #{$color-white};
+  --border-color: #{$color-light-border};
+  --focus-color: #{$color-focus};
+  --primary-black: #{$color-white};
+  --primary-white: #{$color-black};
+  --icon-color: #{$color-black};
+  --icon-card-color: #{$color-white};
+}
+
+:root {
+  --mobile-max: #{$breakpoint-mobile-max};
+  --tablet-min: #{$breakpoint-tablet-min};
+  --tablet-max: #{$breakpoint-tablet-max};
+  --desktop-min: #{$breakpoint-desktop-min};
+
+  --text-xs: #{$font-size-xs};
+  --text-sm: #{$font-size-sm};
+  --text-base: #{$font-size-base};
+  --text-lg: #{$font-size-lg};
+  --text-xl: #{$font-size-xl};
+  --text-2xl: #{$font-size-2xl};
+  --text-3xl: #{$font-size-3xl};
+  --text-4xl: #{$font-size-4xl};
+  --text-5xl: #{$font-size-5xl};
+  --text-6xl: #{$font-size-6xl};
+  --text-7xl: #{$font-size-7xl};
+  --text-8xl: #{$font-size-8xl};
+  --text-9xl: #{$font-size-9xl};
+
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+}

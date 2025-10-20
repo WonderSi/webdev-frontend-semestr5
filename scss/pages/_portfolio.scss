@@ -1,0 +1,10 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.portfolio__title {
+    @include flex-center();
+    font-size: var(--text-xl);
+    font-weight: 700;
+    padding: 50px;
+    color: var(--text-color);
+}

@@ -1,0 +1,30 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.skill-card {
+    @include flex-center();
+    gap: 30px;
+    background-color: var(--bg-primary-color);
+    padding: 20px 30px;
+    min-width: fit-content;
+    transition: all 0.3s ease;
+    &:hover { transform: translateY(-5px) scale(1.05); }
+}
+
+.skill-card__icon {
+    @include flex-center();
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-secondary-color);
+    transition: all 0.3s ease;
+    svg {
+        color: var(--icon-card-color);
+    }
+}
+
+.skill-card__info {
+    color: var(--text-primary-color);
+    white-space: nowrap;
+    flex-shrink: 0;
+    div:first-child { font-weight: 900; }
+}

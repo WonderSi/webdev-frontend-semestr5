@@ -1,0 +1,64 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.about {
+    min-height: 100vh;
+}
+
+.about__main {
+    height: 100vh;
+    @include flex-center(column);
+    gap: 25px;
+    user-select: none;
+    color: var(--text-primary-color);
+    transition: all 0.3s ease;
+    .about__name { font-size: var(--text-6xl); };
+    .about__status { font-size: var(--text-xl); };
+}
+
+.about__photo {
+    width: 100px;
+    border-radius: 100%;
+}
+
+.about__socials {
+    display: flex;
+    gap: 10px;
+}
+
+.about__social-item {
+    a {
+        svg {
+            color: var(--icon-color);
+            transition: color 0.3s ease;
+        }
+    }    
+}
+
+.about__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--bg-secondary-color);
+    color: var(--text-secondary-color);
+    font-size: var(--text-xl);
+    padding: 50px 100px;
+    transition: all 0.3s ease;
+    div:first-child { font-weight: bold; }
+}
+
+@include respond-to(mobile) {
+    .about__main {
+        padding: 32px 16px;
+    }
+    .about__info {
+        font-size: var(--text-xs);
+        padding: 25px 16px;
+    }
+}
+
+@include respond-to(tablet) {
+    .about__info {
+        padding: 25px 75px;
+    }
+}
